@@ -2,7 +2,7 @@ $(function() {
     $('.jcarousel').jcarousel({
         transitions: true,
         animation: {
-            duration: 400,
+            duration: 600,
             easing:   'cubic-bezier(.46,.16,.66,.92)'
         },
         wrap: 'circular'

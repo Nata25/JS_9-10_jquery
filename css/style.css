@@ -34,13 +34,13 @@ img {
     box-shadow: 0 0 5px 0 #bbb;
 }
 
-.jcarousel ul {
+.jcarousel > div {
     width: 20000em;
     position: relative;
     list-style-type: none;
 }
 
-.jcarousel li {
+.jcarousel figure {
     float: left;
 }
 
