@@ -36,5 +36,14 @@ $(function() {
 
     // SelectBox
 
-    $(".selectBox").selectBox();
-});
+    $("select").selectBox({
+        menuTransition: "fade"
+    })
+    .change(function(event) {
+        var bgcolor = event.target.value;
+        $(".selectBox-container").css("backgroundColor", bgcolor);
+
+    });
+
+
+}); // end of ready
