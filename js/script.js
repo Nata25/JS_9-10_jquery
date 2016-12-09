@@ -40,9 +40,9 @@ $(function() {
         menuTransition: "fade"
     })
     .change(function(event) {
-        var bgcolor = event.target.value;
-        $(".selectBox-container").css("backgroundColor", bgcolor);
-
+        $(".selectBox-container")
+            .removeClass()
+            .addClass("selectBox-container " + event.target.value);
     });
 
 

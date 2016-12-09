@@ -106,8 +106,19 @@ img {
 /* SelectBox */
 
 .selectBox-container {
-    background-color: #e6e6c9;
     transition: background-color .3s;
+}
+
+.default {
+    background-color: #e6e6c9;
+}
+
+.light-pink {
+    background-color: #d6bcbc;
+}
+
+.light-green {
+    background-color: #cfe0d0;
 }
 
 .selectBox {
