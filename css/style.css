@@ -128,15 +128,12 @@ img {
 
 .grey,
 .selectBox-dropdown-menu li:nth-child(4) a::after {
-    background-color: #b7b6b6;
+    background-color: #e0dfdf;
 }
 
 .selectBox-dropdown-menu li:last-child a::after {
     background-color: #fff;
-}
-
-.selectBox {
-    /*margin: 10px auto;*/
+    border: 1px solid #bbb;
 }
 
 .selectBox-dropdown {
@@ -156,19 +153,14 @@ img {
     cursor: default;
 }
 
-li::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 10px;
-    height: 10px;
-    background-color: blue;
+.selectBox {
+    display: block;
+    margin: 150px auto;
 }
 
-/*.selectBox-dropdown:focus,
-.selectBox-dropdown:focus .selectBox-arrow {
-    border-color: #666;
-}*/
+.selectBox-dropdown-menu {
+    background-color: #eee;
+}
 
 .selectBox-dropdown .selectBox-label {
     display: inline-block;
@@ -203,16 +195,15 @@ li::after {
     position: absolute;
     max-height: 200px;
     min-height: 1em;
-    border: solid 1px #bbb; /* should be the same border width as .selectBox-dropdown */
+    border: 1px solid #999; /* should be the same border width as .selectBox-dropdown */
     -webkit-overflow-scrolling: touch;
     overflow: auto;
     z-index: 1;
 }
 
-
 .selectBox-options,
-.selectBox-options LI,
-.selectBox-options LI A {
+.selectBox-options li,
+.selectBox-options li a {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -223,24 +214,21 @@ li::after {
 }
 
 .selectBox-options.selectBox-options-top {
-    border-bottom: none;
 	margin-top: 1px;
     border-radius: 5px;
 }
 
-.selectBox-options.selectBox-options-bottom{
-	border-top: none;
+.selectBox-options.selectBox-options-bottom {
     border-radius: 5px;
 }
 
-.selectBox-options LI A {
+.selectBox-options li a {
     line-height: 1.5;
     padding: 0 .5em;
     white-space: nowrap;
     overflow: hidden;
-    background: 6px center no-repeat;
 }
 
-.selectBox-options LI.selectBox-hover A {
-    background-color: #EEE;
+.selectBox-options li.selectBox-hover a {
+    background-color: #ddd;
 }
