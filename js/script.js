@@ -37,13 +37,13 @@ $(function() {
     // SelectBox
 
     $("select").selectBox({
-        menuTransition: "fade"
+        menuTransition: "fade",
+        keepInViewport: true
     })
     .change(function(event) {
         $(".selectBox-container")
             .removeClass()
             .addClass("selectBox-container " + event.target.value);
     });
-
 
 }); // end of ready

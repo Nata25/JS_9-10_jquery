@@ -73,7 +73,7 @@
             .addClass(select.attr('class'))
             .attr('title', select.attr('title') || '')
             .attr('tabindex', tabIndex)
-            .css('display', 'block')
+            .css('display', 'inline-block')
             .bind('focus.selectBox', function () {
                 if (this !== document.activeElement && document.body !== document.activeElement) {
                     $(document.activeElement).blur();
