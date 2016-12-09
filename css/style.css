@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-h1 {
+h2 {
     margin-bottom: 30px;
     font-family: "Vedrana", sans-serif;
     text-align: center;
@@ -13,9 +13,15 @@ img {
     width: 640px;
 }
 
-.wrapper {
+.carousel-container,
+.selectBox-container {
     height: 100vh;
-    padding-top: 30px;
+    padding-top: 40px;
+}
+
+/* Carousel */
+
+.carousel-container {
     background-color: #dbe3f1;
 }
 
@@ -94,4 +100,14 @@ img {
 
 .jcarousel-pagination a.active {
     background-color: #9e9c83;
+}
+
+/* SelectBox */
+
+.selectBox-container {
+    background-color: #e6e6c9;
+}
+
+.selectBox {
+    margin: 10px auto;
 }

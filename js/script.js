@@ -1,4 +1,6 @@
 $(function() {
+
+    // Carousel
     $('.jcarousel').jcarousel({
         transitions: true,
         animation: {
@@ -30,4 +32,9 @@ $(function() {
                 return '<a href="#' + page + '"></a>';
             }
         });
+
+
+    // SelectBox
+
+    $(".selectBox").selectBox();
 });

@@ -3,9 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Using jQuery plugins</title>
+        <link rel="stylesheet" href="css/jquery.selectBox.css" media="screen">
         <link rel="stylesheet" href="css/style.css" media="screen">
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="js/jquery.jcarousel.js"></script>
+        <script type="text/javascript" src="js/jquery.selectBox.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
 
     </head>
@@ -14,9 +16,9 @@
         Mutual wrapper, encloses the carousel and the plugin elements to
         enable auto-detection of the carousel for the plugins.
         -->
-        <section class="wrapper">
+        <section class="carousel-container">
 
-            <h1>Don't be verbouse</h1>
+            <h2>Don't be verbouse</h2>
 
             <div class="jcarousel-wrapper">
                 <div class="jcarousel">
@@ -37,6 +39,17 @@
                 </p>
 
             </div>
+
+        </section>
+
+        <section class="selectBox-container">
+            <h2>Custom SelectBox</h2>
+
+            <select class="selectBox" name="select">
+                <option value="option1">option 1</option>
+                <option value="option2">option 2</option>
+                <option value="option3">option 3</option>
+            </select>
 
         </section>
 
