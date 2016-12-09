@@ -9,13 +9,23 @@ h2 {
     text-align: center;
 }
 
+h3,
+label {
+    display: block;
+    margin: 20px;
+    font-family: "Vedrana", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
 img {
     width: 640px;
 }
 
 .carousel-container,
 .selectBox-container {
-    height: 570px;
+    height: 600px;
     padding-top: 40px;
 }
 
