@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Using jQuery plugins</title>
+        <link rel="stylesheet" href="css/style.css" media="screen">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/jquery.jcarousel.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+
+    </head>
+    <body>
+        <!--
+        Mutual wrapper, encloses the carousel and the plugin elements to
+        enable auto-detection of the carousel for the plugins.
+        -->
+        <div class="wrapper">
+
+            <h1>Don't be verbouse</h1>
+            <div class="jcarousel-wrapper">
+                <div class="jcarousel">
+                        <ul>
+                            <li><img alt="A bird" src="img/bird.jpg"></li>
+                            <li><img alt="An ear, or spica" src="img/ear.jpg"></li>
+                            <li><img alt="Moon on plain sky" src="img/moon.jpg"></li>
+                            <li><img alt="Parachute man" src="img/parachute.jpg"></li>
+                            <li><img alt="Looks like moon crater" src="img/crater.jpg"></li>
+                            <li><img alt="Urbanistic landscape" src="img/black_and_white.jpg"></li>
+                        </ul>
+                </div>
+
+                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+                <p class="jcarousel-pagination">
+                </p>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
