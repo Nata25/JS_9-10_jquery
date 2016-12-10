@@ -242,3 +242,46 @@ img {
 .selectBox-options li.selectBox-hover a {
     background-color: #ddd;
 }
+
+/* Checkboxes */
+
+.css-checkbox {
+    width: 350px;
+    margin: 0 auto;
+    background-color: #99ccff;
+    border: 1px solid #ada8a8;
+}
+
+.css-checkbox label {
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+    text-align: left;
+}
+
+.css-checkbox label::after {
+    position: absolute;
+    top: 1px;
+    right: -28px;
+    width: 13px;
+    height: 13px;
+    background-color: #fff;
+    border: 1px solid #848181;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px #fff;
+    content: '';
+}
+
+.native-checkbox {
+    display: none;
+    /*opacity: 0;*/
+}
+
+.native-checkbox:checked ~ label::after {
+    /*background-color: green;*/
+    content: "\2039";
+    transform: rotate(270deg);
+    color: #545353;
+    font-size: 28px;
+    line-height: 9px;
+}

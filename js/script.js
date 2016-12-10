@@ -38,7 +38,8 @@ $(function() {
 
     $("select").selectBox({
         menuTransition: "fade",
-        keepInViewport: true
+        // keepInViewport: true
+        bottomPositionCorrelation: 0
     })
     .change(function(event) {
         $(".selectBox-container")
