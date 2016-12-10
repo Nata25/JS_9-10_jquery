@@ -245,21 +245,22 @@ img {
 
 /* Checkboxes */
 
-.css-checkbox {
-    width: 350px;
+.checkboxes {
+    position: relative;
+    width: 250px;
     margin: 0 auto;
     background-color: #99ccff;
     border: 1px solid #ada8a8;
 }
 
-.css-checkbox label {
+.checkboxes label {
     display: inline-block;
     position: relative;
     font-size: 16px;
     text-align: left;
 }
 
-.css-checkbox label::after {
+.checkboxes label::after {
     position: absolute;
     top: 1px;
     right: -28px;
@@ -284,4 +285,17 @@ img {
     color: #545353;
     font-size: 28px;
     line-height: 9px;
+}
+
+.message {
+    display: none;
+    position: absolute;
+    top: 21px;
+    right: -220px;
+    font-size: 16px;
+    text-transform: none;
+}
+
+.native-checkbox:checked ~ #css-message {
+    display: block;
 }
