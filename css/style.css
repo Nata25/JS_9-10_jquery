@@ -295,9 +295,13 @@ img {
     /*opacity: 0;*/
 }
 
+.js-checkbox-container::after {
+
+}
+
 .native-checkbox:checked + label::after,
 .native-checkbox:disabled + label::after {
-    content: "\2039";
+    content: '\2039';
     transform: rotate(270deg);
     color: #545353;
     font-size: 28px;
