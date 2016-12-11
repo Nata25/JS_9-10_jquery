@@ -301,8 +301,9 @@ img {
 }
 
 .css-native-checkbox:disabled + label::after,
-.disabled {
+.input-disabled {
     color: rgba(83, 83, 83, .5);
+    border: 1px solid rgba(83, 83, 83, .3);
 }
 
 .label-disabled {
@@ -317,7 +318,7 @@ img {
     font-size: 16px;
 }
 
-.css-native-checkbox:checked ~ #css-message {
+.css-native-checkbox:checked ~ .message {
     display: block;
 }
 

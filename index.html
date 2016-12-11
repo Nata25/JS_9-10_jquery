@@ -62,6 +62,7 @@
 
             <div class="wrapper">
                 <input type="checkbox"
+                    checked
                     id="css-checkbox-input"
                     name="css-checkbox-input"
                     class="css-native-checkbox">
@@ -69,9 +70,21 @@
                     class="css-checkbox">
                     Display secret message
                 </label>
-                <span class="message" id="css-message">this is a pure CSS checkbox</span>
+                <span class="message css-message">this is a pure CSS checkbox</span>
             </div>
 
+
+            <div class="wrapper">
+                <input type="checkbox"
+                    disabled
+                    id="css-checkbox-input-disabled"
+                    name="css-checkbox-input-disabled"
+                    class="css-native-checkbox">
+                <label for="css-checkbox-input-disabled"
+                    class="css-checkbox label-disabled">
+                    Destroy the world
+                </label>
+            </div>
 
             <div class="wrapper">
                 <input type="checkbox"
@@ -81,7 +94,7 @@
                     class="css-native-checkbox">
                 <label for="css-checkbox-input-disabled"
                     class="css-checkbox label-disabled">
-                    Destroy the world (via css)
+                    Shake her hand
                 </label>
             </div>
 
@@ -95,8 +108,13 @@
             <div class="wrapper js-wrapper">
                 Resurrect John Lennon
                 <span class="js-checkbox-container"></span>
+                <input type="checkbox" disabled name="js-checkbox-input" class="js-native-checkbox">
+            </div>
+
+            <div class="wrapper js-wrapper">
+                Love coding
+                <span class="js-checkbox-container"></span>
                 <input type="checkbox" disabled checked name="js-checkbox-input" class="js-native-checkbox">
-                <span class="message">this custom checkbox uses JS</span>
             </div>
 
         </section>
