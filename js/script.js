@@ -56,11 +56,12 @@ $(function() {
         // don't fire event on disabled input
         var input = $(this).find(".js-native-checkbox");
         if (input.attr("disabled")) return false;
+
         changeCheck($(this), input);
     });
 
-    $(".js-wrapper").each(function() {
     // if any checkboxes are checked or disabled, style them properly
+    $(".js-wrapper").each(function() {
         changeCheckStart($(this));
     });
 
@@ -102,7 +103,7 @@ $(function() {
             container.addClass("input-disabled");
         }
     }
-    // 
+    //
     // $(".js-native-checkbox").change(function() {
     //     console.log($(this).is(":checked"));
     // });
