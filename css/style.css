@@ -261,8 +261,11 @@ img {
     text-transform: none;
 }
 
-.css-checkbox label,
-.js-checkbox label {
+.js-checkbox {
+    padding: 20px 57px 20px 20px;
+}
+
+.css-checkbox label {
     display: inline-block;
     position: relative;
     margin: 0;
@@ -290,9 +293,10 @@ img {
     content: '';
 }
 
-.native-checkbox {
-    display: none;
-    /*opacity: 0;*/
+.native-checkbox,
+.js-native-checkbox {
+    /*display: none;*/
+    opacity: 0;
 }
 
 .native-checkbox:checked + label::after,

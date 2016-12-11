@@ -1,11 +1,11 @@
 $(function() {
 
-    $(".js-checkbox-container").mousedown(function() {
+    $(".js-checkbox").mousedown(function() {
     /* при клике на чекбоксе меняем его вид и значение */
         changeCheck($(this));
     });
 
-    $(".js-checkbox-container").each(function() {
+    $(".js-checkbox").each(function() {
     /* при загрузке страницы нужно проверить какое значение имеет чекбокс и в соответствии с ним выставить вид */
          changeCheckStart($(this));
     });
@@ -13,34 +13,27 @@ $(function() {
 }); // end of ready
 
 function changeCheck(el) {
-/*
-    функция смены вида и значения чекбокса
-    el - span контейнер дял обычного чекбокса
-    input - чекбокс
-*/
-    var el = el,
-    input = el.find("input").eq(0);
+    var container = el.find(".js-checkbox-container"),
+    input = el.find(".js-native-checkbox"),
+    message = el.find(".message");
 
     if (!input.attr("checked")) {
-        el.html('\u2228');
+        console.log("not checked");
+        container.html('\u2228');
         input.attr("checked", true);
-        console.log("checked");
+        message.css("display", "block");
     }
     else {
-        el.html("");
+        container.html("");
         input.attr("checked", false);
+        message.css("display", "none");
     }
-    return true;
 }
 
 function changeCheckStart(el) {
-/*
-    если установлен атрибут checked, меняем вид чекбокса
-*/
-    var el = el,
-    input = el.find("input").eq(0);
+    var container = el.find(".js-checkbox-container"),
+    input = el.find(".js-native-checkbox");
+
     if (input.attr("checked")) {
-        el.html("\2039");
-    }
-    return true;
+        container.html("\u2228");
 }

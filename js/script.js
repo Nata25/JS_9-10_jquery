@@ -52,5 +52,9 @@ $(function() {
         console.log("active checkbox");
     });
 
+    $("#js-checkbox-input").change(function() {
+        console.log($(this).is(":checked"));
+    });
+
 
 }); // end of ready
