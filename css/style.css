@@ -246,36 +246,31 @@ img {
 
 /* Checkboxes */
 
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 350px;
+    text-transform: none;
+    box-sizing: border-box;
+}
+
 .checkBox-container {
     font-family: Arial, sans-serif;
     text-transform: capitalize;
 }
 
 .css-checkbox,
-.js-checkbox {
+.js-wrapper {
     position: relative;
-    width: 250px;
-    margin: 0 auto;
+    margin: 10px auto;
+    padding: 20px 57px 20px 20px;
     background-color: #99ccff;
     border: 1px solid #ada8a8;
-    text-transform: none;
-}
-
-.js-checkbox {
-    padding: 20px 57px 20px 20px;
-}
-
-.css-checkbox label {
-    display: inline-block;
-    position: relative;
-    margin: 0;
-    width: 175px;
-    padding: 20px 57px 20px 20px;
     font-size: 16px;
     text-align: left;
 }
 
-.css-checkbox label::after,
+.css-checkbox::after,
 .js-checkbox-container {
     position: absolute;
     top: 20px;
@@ -289,36 +284,40 @@ img {
     z-index: 1;
 }
 
-.css-checkbox label::after {
+.css-checkbox::after {
     content: '';
 }
 
-.native-checkbox,
+.css-native-checkbox,
 .js-native-checkbox {
-    /*display: none;*/
-    opacity: 0;
+    display: none;
+    /*opacity: 0;*/
 }
 
-.native-checkbox:checked + label::after,
-.native-checkbox:disabled + label::after {
+.css-native-checkbox:checked + label::after {
     content: '\2228';
     font-size: 10px;
     text-align: center;
 }
 
-.native-checkbox:disabled + label::after {
+.css-native-checkbox:disabled + label::after,
+.disabled {
     color: rgba(83, 83, 83, .5);
+}
+
+.label-disabled {
+    color: rgba(0, 0, 0, .4);
 }
 
 .message {
     display: none;
     position: absolute;
-    top: 21px;
-    right: -220px;
+    top: 20px;
+    right: -225px;
     font-size: 16px;
 }
 
-.native-checkbox:checked ~ #css-message {
+.css-native-checkbox:checked ~ #css-message {
     display: block;
 }
 

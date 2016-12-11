@@ -48,12 +48,12 @@ $(function() {
     });
 
     // JS custom checkbox
-    $(".js-checkbox").mousedown(function() {
+    $(".js-wrapper").mousedown(function() {
     /* при клике на чекбоксе меняем его вид и значение */
         changeCheck($(this));
     });
 
-    $(".js-checkbox").each(function() {
+    $(".js-wrapper").each(function() {
     /* при загрузке страницы нужно проверить какое значение имеет чекбокс и в соответствии с ним выставить вид */
          changeCheckStart($(this));
     });
@@ -83,6 +83,11 @@ $(function() {
 
         if (input.attr("checked")) {
             container.html("\u2228");
+        }
+
+        if (input.attr("disabled")) {
+            // console.log("disabled");
+            $(this).addClass("disabled");
         }
     }
 

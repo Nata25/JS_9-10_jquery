@@ -7,7 +7,6 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery.jcarousel.js"></script>
         <script type="text/javascript" src="js/jquery.selectBox.js"></script>
-        <!-- <script type="text/javascript" src="js/jquery.checkbox.js"></script> -->
         <script type="text/javascript" src="js/script.js"></script>
 
     </head>
@@ -61,23 +60,43 @@
         <section class="checkBox-container">
             <h2>Custom checkBoxes</h2>
 
-            <div class="css-checkbox">
-                <input type="checkbox" id="css-checkbox-input" name="css-checkbox-input" class="native-checkbox">
-                <label for="css-checkbox-input">Display secret message</label>
+            <div class="wrapper">
+                <input type="checkbox"
+                    id="css-checkbox-input"
+                    name="css-checkbox-input"
+                    class="css-native-checkbox">
+                <label for="css-checkbox-input"
+                    class="css-checkbox">
+                    Display secret message
+                </label>
                 <span class="message" id="css-message">this is a pure CSS checkbox</span>
             </div>
 
-            <div class="css-checkbox">
-                <input type="checkbox" disabled="disabled" id="css-checkbox-input-disabled" name="css-checkbox-input-disabled" class="native-checkbox">
-                <label for="css-checkbox-input-disabled">Destroy the world</label>
+
+            <div class="wrapper">
+                <input type="checkbox"
+                    disabled checked
+                    id="css-checkbox-input-disabled"
+                    name="css-checkbox-input-disabled"
+                    class="css-native-checkbox">
+                <label for="css-checkbox-input-disabled"
+                    class="css-checkbox label-disabled">
+                    Destroy the world (via css)
+                </label>
             </div>
 
-            <div class="js-checkbox">
+            <div class="wrapper js-wrapper">
                 Display another secret message
                 <span class="js-checkbox-container"></span>
-                <input type="checkbox" id="js-checkbox-input" name="js-checkbox-input" class="js-native-checkbox">
-                <span class="message" id="js-message">this custom checkbox uses JS</span>
+                <input type="checkbox" name="js-checkbox-input" class="js-native-checkbox">
+                <span class="message">this custom checkbox uses JS</span>
+            </div>
 
+            <div class="wrapper js-wrapper">
+                Resurrect John Lennon
+                <span class="js-checkbox-container"></span>
+                <input type="checkbox" disabled checked name="js-checkbox-input" class="js-native-checkbox">
+                <span class="message">this custom checkbox uses JS</span>
             </div>
 
         </section>
