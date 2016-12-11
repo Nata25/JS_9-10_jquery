@@ -295,17 +295,11 @@ img {
     /*opacity: 0;*/
 }
 
-.js-checkbox-container::after {
-
-}
-
 .native-checkbox:checked + label::after,
 .native-checkbox:disabled + label::after {
-    content: '\2039';
-    transform: rotate(270deg);
-    color: #545353;
-    font-size: 28px;
-    line-height: 9px;
+    content: '\2228';
+    font-size: 10px;
+    text-align: center;
 }
 
 .native-checkbox:disabled + label::after {
@@ -325,5 +319,6 @@ img {
 }
 
 .js-checkbox-container {
-
+    font-size: 10px;
+    text-align: center;
 }

@@ -22,7 +22,7 @@ function changeCheck(el) {
     input = el.find("input").eq(0);
 
     if (!input.attr("checked")) {
-        el.html('\u005E');
+        el.html('\u2228');
         input.attr("checked", true);
         console.log("checked");
     }
