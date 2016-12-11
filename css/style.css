@@ -24,7 +24,8 @@ img {
 }
 
 .carousel-container,
-.selectBox-container {
+.selectBox-container,
+.checkBox-container {
     height: 600px;
     padding-top: 40px;
 }
@@ -245,7 +246,13 @@ img {
 
 /* Checkboxes */
 
-.css-checkbox {
+.checkBox-container {
+    font-family: Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+.css-checkbox,
+.js-checkbox {
     position: relative;
     width: 250px;
     margin: 0 auto;
@@ -254,7 +261,8 @@ img {
     text-transform: none;
 }
 
-.css-checkbox label {
+.css-checkbox label,
+.js-checkbox label {
     display: inline-block;
     position: relative;
     margin: 0;
@@ -264,7 +272,8 @@ img {
     text-align: left;
 }
 
-.css-checkbox label::after {
+.css-checkbox label::after,
+.js-checkbox-container {
     position: absolute;
     top: 20px;
     right: 15px;
@@ -274,8 +283,11 @@ img {
     border: 1px solid #848181;
     border-radius: 3px;
     box-shadow: 0 0 0 1px #fff;
-    content: '';
     z-index: 1;
+}
+
+.css-checkbox label::after {
+    content: '';
 }
 
 .native-checkbox {
@@ -302,9 +314,12 @@ img {
     top: 21px;
     right: -220px;
     font-size: 16px;
-    /*text-transform: none;*/
 }
 
 .native-checkbox:checked ~ #css-message {
     display: block;
+}
+
+.js-checkbox-container {
+
 }

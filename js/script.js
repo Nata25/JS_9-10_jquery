@@ -47,9 +47,9 @@ $(function() {
             .addClass("selectBox-container " + event.target.value);
     });
 
-    // css-checkbox
-    $(".native-checkbox").click(function() {
-        console.log($(this).is(":checked"));
+    // JS custom checkbox
+    $(".js-checkbox").change(function() {
+        console.log("active checkbox");
     });
 
 

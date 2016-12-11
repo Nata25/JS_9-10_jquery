@@ -45,7 +45,7 @@
 
         <section class="selectBox-container default">
 
-            <h2>Custom selectBox &amp; checkBox</h2>
+            <h2>Custom selectBox</h2>
 
             <label for="my-dropdown">Choose background color</label>
             <select id="my-dropdown" class="selectBox" name="select">
@@ -55,6 +55,10 @@
                 <option value="grey">grey</option>
                 <option value="white">white</option>
             </select>
+        </section>
+
+        <section class="checkBox-container">
+            <h2>Custom checkBoxes</h2>
 
             <div class="css-checkbox">
                 <input type="checkbox" id="css-checkbox-input" name="css-checkbox-input" class="native-checkbox">
@@ -64,16 +68,18 @@
             </div>
 
             <div class="css-checkbox">
-                <input type="checkbox" id="css-checkbox-input1" name="css-checkbox-input" class="native-checkbox">
-                <label for="css-checkbox-input1">Display secret message</label>
-                <span class="message" id="css-message">this is a pure CSS checkbox</span>
-
-            </div>
-
-            <div class="css-checkbox">
 
                 <input type="checkbox" disabled="disabled" id="css-checkbox-input-disabled" name="css-checkbox-input-disabled" class="native-checkbox">
                 <label for="css-checkbox-input-disabled">Destroy the world</label>
+
+            </div>
+
+            <div class="js-checkbox">
+                <label for="js-checkbox-input">Display secret message</label>
+                <span class="js-checkbox-container">
+                    <input type="checkbox" id="js-checkbox-input" name="js-checkbox-input" class="native-checkbox">
+                </span>
+                <span class="message" id="js-message">this custom checkbox uses JS</span>
 
             </div>
 
