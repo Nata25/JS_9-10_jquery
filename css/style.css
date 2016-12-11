@@ -245,7 +245,7 @@ img {
 
 /* Checkboxes */
 
-.checkboxes {
+.css-checkbox {
     position: relative;
     width: 250px;
     margin: 0 auto;
@@ -253,17 +253,19 @@ img {
     border: 1px solid #ada8a8;
 }
 
-.checkboxes label {
+.css-checkbox label {
     display: inline-block;
     position: relative;
+    margin: 0;
+    padding: 20px 57px 20px 20px;
     font-size: 16px;
     text-align: left;
 }
 
-.checkboxes label::after {
+.css-checkbox label::after {
     position: absolute;
-    top: 1px;
-    right: -28px;
+    top: 20px;
+    right: 15px;
     width: 13px;
     height: 13px;
     background-color: #fff;
