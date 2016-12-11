@@ -1,6 +1,6 @@
 $(function() {
 
-    // Carousel
+//*********** Carousel *********** //
     $('.jcarousel').jcarousel({
         transitions: true,
         animation: {
@@ -33,8 +33,7 @@ $(function() {
             }
         });
 
-
-    // SelectBox
+//*********** SelectBox *********** //
 
     $("select").selectBox({
         menuTransition: "fade",
@@ -47,9 +46,17 @@ $(function() {
             .addClass("selectBox-container " + event.target.value);
     });
 
-    // JS custom checkboxes
-    $(".js-wrapper").mousedown(function() {
-        changeCheck($(this));
+//*********** CheckBox *********** //
+
+    $(".js-wrapper").mousedown(function(event) {
+        // don't fire click event on 'secret message' showing
+        if ($(event.target).hasClass("message")) {
+            return false;
+        }
+        // don't fire event on disabled input
+        var input = $(this).find(".js-native-checkbox");
+        if (input.attr("disabled")) return false;
+        changeCheck($(this), input);
     });
 
     $(".js-wrapper").each(function() {
@@ -63,27 +70,22 @@ $(function() {
     });
 
     // Helpers for js checkbox
-    function changeCheck(el) {
-        var input = el.find(".js-native-checkbox");
+    function changeCheck(el, input) {
+        var container = el.find(".js-checkbox-container"),
+        message = el.find(".message");
 
-        if (!input.attr("disabled")) {
-
-            var container = el.find(".js-checkbox-container"),
-            message = el.find(".message");
-
-            if (!input.attr("checked")) {
-                container.html('\u2228');
-                input.attr("checked", true);
-                message.css("display", "block");
-            }
-            else {
-                container.html("");
-                input.attr("checked", false);
-                message.css("display", "none");
-            }
-            // fire event manually
-            input.change();
+        if (!input.attr("checked")) {
+            container.html('\u2228');
+            input.attr("checked", true);
+            message.css("display", "block");
         }
+        else {
+            container.html("");
+            input.attr("checked", false);
+            message.css("display", "none");
+        }
+        // fire event manually
+        input.change();
     }
 
     function changeCheckStart(el) {
@@ -100,5 +102,9 @@ $(function() {
             container.addClass("input-disabled");
         }
     }
-    
+    // 
+    // $(".js-native-checkbox").change(function() {
+    //     console.log($(this).is(":checked"));
+    // });
+
 }); // end of ready
