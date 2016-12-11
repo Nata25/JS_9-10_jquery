@@ -290,8 +290,8 @@ img {
 
 .css-native-checkbox,
 .js-native-checkbox {
-    display: none;
-    /*opacity: 0;*/
+    position: absolute;
+    opacity: 0;
 }
 
 .css-native-checkbox:checked + label::after {

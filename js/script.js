@@ -38,7 +38,7 @@ $(function() {
 
     $("select").selectBox({
         menuTransition: "fade",
-        // keepInViewport: true
+        keepInViewport: true,
         bottomPositionCorrelation: 0
     })
     .change(function(event) {
@@ -47,24 +47,30 @@ $(function() {
             .addClass("selectBox-container " + event.target.value);
     });
 
-    // JS custom checkbox
+    // JS custom checkboxes
     $(".js-wrapper").mousedown(function() {
-    /* при клике на чекбоксе меняем его вид и значение */
         changeCheck($(this));
     });
 
     $(".js-wrapper").each(function() {
-    /* при загрузке страницы нужно проверить какое значение имеет чекбокс и в соответствии с ним выставить вид */
-         changeCheckStart($(this));
+    // if any checkboxes are checked or disabled, style them properly
+        changeCheckStart($(this));
+    });
+
+    // don't check native checkbox on click (conflict with script logic)
+    $(".js-native-checkbox").click(function(event) {
+        event.preventDefault();
     });
 
     // Helpers for js checkbox
     function changeCheck(el) {
-        var container = el.find(".js-checkbox-container"),
-        input = el.find(".js-native-checkbox"),
-        message = el.find(".message");
+        var input = el.find(".js-native-checkbox");
 
         if (!input.attr("disabled")) {
+
+            var container = el.find(".js-checkbox-container"),
+            message = el.find(".message");
+
             if (!input.attr("checked")) {
                 container.html('\u2228');
                 input.attr("checked", true);
@@ -75,6 +81,8 @@ $(function() {
                 input.attr("checked", false);
                 message.css("display", "none");
             }
+            // fire event manually
+            input.change();
         }
     }
 
@@ -92,5 +100,15 @@ $(function() {
             container.addClass("input-disabled");
         }
     }
+
+    // Test if native checkboxes work fine
+
+    $(".css-native-checkbox").change(function() {
+        console.log($(this).is(":checked"));
+    });
+
+    $(".js-native-checkbox").change(function() {
+        console.log($(this).is(":checked"));
+    });
 
 }); // end of ready
