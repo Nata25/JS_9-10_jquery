@@ -60,27 +60,28 @@
         <section class="checkBox-container">
             <h2>Custom checkBoxes</h2>
 
+            <h3>CSS checkboxes</h3>
+
             <div class="wrapper">
                 <input type="checkbox"
                     checked
-                    id="css-checkbox-input"
+                    id="display-css-message"
                     name="css-checkbox-input"
                     class="css-native-checkbox">
-                <label for="css-checkbox-input"
+                <label for="display-css-message"
                     class="css-checkbox">
                     Display secret message
                 </label>
                 <span class="message css-message">this is a pure CSS checkbox</span>
             </div>
 
-
             <div class="wrapper">
                 <input type="checkbox"
                     disabled
-                    id="css-checkbox-input-disabled"
-                    name="css-checkbox-input-disabled"
+                    id="destroy-world"
+                    name="destroy-world"
                     class="css-native-checkbox">
-                <label for="css-checkbox-input-disabled"
+                <label for="destroy-world"
                     class="css-checkbox label-disabled">
                     Destroy the world
                 </label>
@@ -89,32 +90,41 @@
             <div class="wrapper">
                 <input type="checkbox"
                     disabled checked
-                    id="css-checkbox-input-disabled"
-                    name="css-checkbox-input-disabled"
+                    id="shake-hand"
+                    name="shake-hand"
                     class="css-native-checkbox">
-                <label for="css-checkbox-input-disabled"
+                <label for="shake-hand"
                     class="css-checkbox label-disabled">
                     Shake her hand
                 </label>
             </div>
 
+            <h3>JS checkboxes</h3>
+
             <div class="wrapper js-wrapper">
                 Display another secret message
                 <span class="js-checkbox-container"></span>
-                <input type="checkbox" name="js-checkbox-input" class="js-native-checkbox">
+                <input type="checkbox"
+                name="display-js-message"
+                class="js-native-checkbox">
                 <span class="message">this custom checkbox uses JS</span>
             </div>
 
             <div class="wrapper js-wrapper">
                 Resurrect John Lennon
                 <span class="js-checkbox-container"></span>
-                <input type="checkbox" disabled name="js-checkbox-input" class="js-native-checkbox">
+                <input type="checkbox"
+                disabled
+                name="resurrect-lennon" class="js-native-checkbox">
             </div>
 
             <div class="wrapper js-wrapper">
                 Love coding
                 <span class="js-checkbox-container"></span>
-                <input type="checkbox" disabled checked name="js-checkbox-input" class="js-native-checkbox">
+                <input type="checkbox"
+                disabled
+                checked
+                name="love-coding" class="js-native-checkbox">
             </div>
 
         </section>

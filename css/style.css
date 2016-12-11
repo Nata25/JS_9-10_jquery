@@ -325,4 +325,5 @@ img {
 .js-checkbox-container {
     font-size: 10px;
     text-align: center;
+    cursor: default;
 }

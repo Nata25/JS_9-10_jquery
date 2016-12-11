@@ -66,7 +66,6 @@ $(function() {
 
         if (!input.attr("disabled")) {
             if (!input.attr("checked")) {
-                console.log("not checked");
                 container.html('\u2228');
                 input.attr("checked", true);
                 message.css("display", "block");
@@ -93,6 +92,5 @@ $(function() {
             container.addClass("input-disabled");
         }
     }
-
 
 }); // end of ready
