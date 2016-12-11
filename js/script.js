@@ -47,4 +47,10 @@ $(function() {
             .addClass("selectBox-container " + event.target.value);
     });
 
+    // css-checkbox
+    $(".native-checkbox").click(function() {
+        console.log($(this).is(":checked"));
+    });
+
+
 }); // end of ready
