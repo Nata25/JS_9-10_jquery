@@ -246,6 +246,11 @@ img {
 
 /* Checkboxes */
 
+.checkBox-container {
+    font-family: Arial, sans-serif;
+    text-transform: capitalize;
+}
+
 .wrapper {
     position: relative;
     margin: 0 auto;
@@ -254,18 +259,13 @@ img {
     box-sizing: border-box;
 }
 
-.checkBox-container {
-    font-family: Arial, sans-serif;
-    text-transform: capitalize;
-}
-
 .css-checkbox,
 .js-wrapper {
     position: relative;
     margin: 10px auto;
     padding: 20px 57px 20px 20px;
-    background-color: #99ccff;
     border: 1px solid #ada8a8;
+    background-color: #99ccff;
     font-size: 16px;
     text-align: left;
 }
@@ -277,11 +277,10 @@ img {
     right: 15px;
     width: 13px;
     height: 13px;
-    background-color: #fff;
     border: 1px solid #848181;
     border-radius: 3px;
     box-shadow: 0 0 0 1px #fff;
-    z-index: 1;
+    background-color: #fff;
 }
 
 .css-checkbox::after {
@@ -294,13 +293,13 @@ img {
     opacity: 0;
 }
 
-.css-native-checkbox:checked + label::after {
+.css-native-checkbox:checked + .css-checkbox::after {
     content: '\2228';
     font-size: 10px;
     text-align: center;
 }
 
-.css-native-checkbox:disabled + label::after,
+.css-native-checkbox:disabled + .css-checkbox::after,
 .input-disabled {
     color: rgba(83, 83, 83, .5);
     border: 1px solid rgba(83, 83, 83, .3);

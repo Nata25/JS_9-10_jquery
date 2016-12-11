@@ -100,15 +100,5 @@ $(function() {
             container.addClass("input-disabled");
         }
     }
-
-    // Test if native checkboxes work fine
-
-    $(".css-native-checkbox").change(function() {
-        console.log($(this).is(":checked"));
-    });
-
-    $(".js-native-checkbox").change(function() {
-        console.log($(this).is(":checked"));
-    });
-
+    
 }); // end of ready
