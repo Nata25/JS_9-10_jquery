@@ -337,32 +337,56 @@ img {
 
 .navigation li {
     position: relative;
+    cursor: pointer;
 }
 
 .navigation ul {
     display: flex;
-    width: 100%;
     list-style-type: none;
     background-color: #ef6e46;
 }
 
-.navigation a {
-    display: inline-block;
-    position: relative;
-    padding: 20px 40px;
-    color: #fff;
-    font-family: Georgia, Arial, sans-serif;
-    text-decoration: none;
-    background-color: transparent;
-    transition: background-color .1s ease-in-out;
+.navigation > ul > li > a,
+.navigation > .list-container {
+    padding: 17px 40px;
 }
 
-.navigation a:hover {
+.navigation li,
+.navigation a {
+    font-family: Georgia, Arial, sans-serif;
+    text-decoration: none;
+}
+
+.navigation li:hover {
     background-color: #f59771;
     color: #000;
 }
 
-.inner-list::after {
+
+.navigation a,
+.list-container {
+    display: inline-block;
+    position: relative;
+    padding: 15px 40px;
+    background-color: transparent;
+    color: #fff;
+    transition: background-color .1s ease-in-out;
+}
+
+.navigation a {
+    color: #fff;
+}
+
+.navigation a:hover,
+.list-container:hover {
+    color: #000;
+}
+
+.list-container a {
+    padding: 15px 40px;
+}
+
+.list-container::after {
     position: absolute;
     top: 31px;
     left: 90px;
@@ -374,7 +398,7 @@ img {
     content: '';
 }
 
-.inner-list .inner-list::after {
+.list-container .list-container::after {
     position: absolute;
     width: 0;
     height: 0;
@@ -382,15 +406,23 @@ img {
     border-bottom: 5px solid transparent;
     border-left: 5px solid #fff;
     left: 180px;
-    top: 25px;
+    top: 19px;
 }
 
-.inner-list ul {
+.inner-list {
     position: absolute;
     flex-direction: column;
+    top: 53px;
+    left: 0;
     width: 200px;
 }
 
-.inner-list a {
-    width: 60%;
+.inner-list li {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.list-aside {
+    top: 0;
+    left: 200px;
 }
