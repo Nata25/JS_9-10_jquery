@@ -103,9 +103,10 @@ $(function() {
             container.addClass("input-disabled");
         }
     }
-    //
-    // $(".js-native-checkbox").change(function() {
-    //     console.log($(this).is(":checked"));
-    // });
+
+//*********** Navigation *********** //
+    $(".navigation a").click(function(event) {
+        event.preventDefault();
+    })
 
 }); // end of ready

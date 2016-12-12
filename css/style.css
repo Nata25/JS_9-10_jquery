@@ -25,7 +25,8 @@ img {
 
 .carousel-container,
 .selectBox-container,
-.checkBox-container {
+.checkBox-container,
+.navigation-container {
     height: 600px;
     padding-top: 40px;
 }
@@ -326,4 +327,70 @@ img {
     font-size: 10px;
     text-align: center;
     cursor: default;
+}
+
+/* Navigation */
+.navigation-container {
+    /*background-color: #00f1ff;*/
+    background-color: #a5faff;
+}
+
+.navigation li {
+    position: relative;
+}
+
+.navigation ul {
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    background-color: #ef6e46;
+}
+
+.navigation a {
+    display: inline-block;
+    position: relative;
+    padding: 20px 40px;
+    color: #fff;
+    font-family: Georgia, Arial, sans-serif;
+    text-decoration: none;
+    background-color: transparent;
+    transition: background-color .1s ease-in-out;
+}
+
+.navigation a:hover {
+    background-color: #f59771;
+    color: #000;
+}
+
+.inner-list::after {
+    position: absolute;
+    top: 31px;
+    left: 90px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #fff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    content: '';
+}
+
+.inner-list .inner-list::after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #fff;
+    left: 180px;
+    top: 25px;
+}
+
+.inner-list ul {
+    position: absolute;
+    flex-direction: column;
+    width: 200px;
+}
+
+.inner-list a {
+    width: 60%;
 }
