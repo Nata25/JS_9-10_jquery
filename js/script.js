@@ -105,21 +105,15 @@ $(function() {
     }
 
 //*********** Navigation *********** //
+    $(".inner-list").hide();
+
     $(".navigation a").click(function(event) {
         event.preventDefault();
     });
 
     $(".list-container").hover(
         function() {
-            $(this).children("ul").toggleClass("hidden");
+            $(this).children("ul").slideToggle(250);
         }
     );
-
-    // $(".inner-list").hover(function() {
-    //     $(this).parent().css({
-    //         "background-color": "#ef6e46",
-    //         "color": "#fff"
-    //     });
-    // });
-
 }); // end of ready
