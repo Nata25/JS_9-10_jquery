@@ -114,6 +114,7 @@ $(function() {
     $(".list-container").hover(
         function() {
             $(this).children("ul").slideToggle(250);
+            $(this).children("ul").toggleClass("animated");
         }
     );
 }); // end of ready
