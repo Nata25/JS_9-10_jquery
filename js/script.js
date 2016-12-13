@@ -110,12 +110,16 @@ $(function() {
     });
 
     $(".list-container").hover(
-        // function() {
-        //     $(this).children("ul").css("display", "block");
-        // },
         function() {
             $(this).children("ul").toggleClass("hidden");
         }
     );
+
+    // $(".inner-list").hover(function() {
+    //     $(this).parent().css({
+    //         "background-color": "#ef6e46",
+    //         "color": "#fff"
+    //     });
+    // });
 
 }); // end of ready

@@ -350,38 +350,32 @@ img {
     background-color: #ef6e46;
 }
 
-.navigation > ul > li > a,
-.navigation > ul > .list-container {
+.navigation > ul > li > a {
     padding: 17px 40px;
 }
 
-.navigation li,
 .navigation a {
     font-family: Georgia, Arial, sans-serif;
     text-decoration: none;
 }
 
-.navigation li:hover {
+.navigation a:hover {
     background-color: #f59771;
     color: #000;
 }
 
-.navigation a,
-.list-container {
+.navigation a {
     display: inline-block;
+    width: 100%;
     position: relative;
     padding: 15px 40px;
     background-color: transparent;
     color: #fff;
     transition: background-color .1s ease-in-out;
+    box-sizing: border-box;
 }
 
-.navigation a {
-    color: #fff;
-}
-
-.navigation a:hover,
-.list-container:hover {
+.navigation a:hover {
     color: #000;
 }
 
@@ -414,11 +408,6 @@ img {
     top: 53px;
     left: 0;
     width: 200px;
-}
-
-.inner-list li {
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .list-aside {
