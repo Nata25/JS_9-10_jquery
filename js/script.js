@@ -113,8 +113,9 @@ $(function() {
 
     $(".list-container").hover(
         function() {
-            $(this).children("ul").slideToggle(250);
-            $(this).children("ul").toggleClass("animated");
+            var submenu = $(this).children("ul");
+            submenu.slideToggle(250);
+            submenu.toggleClass("animated");
         }
     );
 

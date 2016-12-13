@@ -353,8 +353,8 @@ img {
     display: flex;
 }
 
-.main-list {
-    background-color: #d65623;
+.navigation > ul {  /* .main-list */
+    background-color: #e67a38;
 }
 
 .main-list > li > a {
