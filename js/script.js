@@ -124,11 +124,11 @@ $(function() {
     // JavaScript part
 
     // Hide all submenues (if user has no js, everithing would be visible by default)
-    var submenues = document.getElementsByClassName("inner-list");
-    var len = submenues.length;
-    for (var i = 0; i < len; i++) {
-        submenues[i].style.display = "none";
-    };
+    // var submenues = document.getElementsByClassName("inner-list");
+    // var len = submenues.length;
+    // for (var i = 0; i < len; i++) {
+    //     submenues[i].style.display = "none";
+    // };
 
     // Prevent page reload on menu items click
     var links = document.querySelectorAll(".navigation a");
@@ -145,7 +145,45 @@ $(function() {
     for (var i = 0; i < len; i++) {
         listContainers[i].addEventListener("mouseenter", function() {
             var innerList = this.children[1];
+            innerList.style.overflow = "hidden";
+
+            // get height of submenu list
+            var initialHeight = innerList.style.top;
+            innerList.style.top = "-10000px";
             innerList.style.display = "flex";
+            var actualHeight;
+            if (innerList.offsetHeight) {
+                actualHeight = innerList.offsetHeight;
+            }
+            else if (innerList.style.pixelHeight) {
+                actualHeight = innerList.style.pixelHeight;
+            }
+            console.log(actualHeight);
+            innerList.style.top = initialHeight;
+            innerList.style.height = 0;
+
+            // animate slideDown effect
+
+            var duration = 1000; // wanted animation duration
+            var step = 3; // num of pixels per frame
+            var frames = Math.floor(actualHeight / step); // num of frames
+            var tick = Math.floor(duration / frames);
+            var recalculatedDuration = tick * frames; // actual animation duration
+            console.log("frames: ", frames, "tick: ", tick, "duration: ", recalculatedDuration);
+            var currentHeight = actualHeight % step;
+            var renderFrame = setInterval(function() {
+                currentHeight += step;
+                innerList.style.height = currentHeight + "px";
+                // console.log(innerList.style.height);
+            }, tick);
+            // var height = window.getComputedStyle(innerList).height;
+            // console.log("heigt is ", height);
+            // innerList.style.display = "flex";
+            setTimeout(function() {
+                console.log("inside setTimeout");
+                clearInterval(renderFrame);
+                console.log(innerList.style.height);
+            }, recalculatedDuration);
         });
 
         listContainers[i].addEventListener("mouseleave", function() {
@@ -153,4 +191,5 @@ $(function() {
             innerList.style.display = "none";
         });
     }
+
 }); // end of ready
