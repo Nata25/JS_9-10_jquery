@@ -122,7 +122,7 @@ $(function() {
     // );
 
     // JavaScript part
-    
+
     // Hide all submenues (if user has no js, everithing would be visible by default)
     var submenues = document.getElementsByClassName("inner-list");
     var len = submenues.length;
@@ -136,6 +136,21 @@ $(function() {
     for (var i = 0; i < len; i++) {
         links[i].addEventListener("click", function(event) {
             event.preventDefault();
+        });
+    }
+
+    // Show submenues on parent hover
+    var listContainers = document.getElementsByClassName("list-container");
+    len = listContainers.length;
+    for (var i = 0; i < len; i++) {
+        listContainers[i].addEventListener("mouseenter", function() {
+            var innerList = this.children[1];
+            innerList.style.display = "flex";
+        });
+
+        listContainers[i].addEventListener("mouseleave", function() {
+            var innerList = this.children[1];
+            innerList.style.display = "none";
         });
     }
 }); // end of ready
