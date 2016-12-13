@@ -4,11 +4,6 @@
         <meta charset="utf-8">
         <title>Using jQuery plugins</title>
         <link rel="stylesheet" href="css/style.css" media="screen">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery.jcarousel.js"></script>
-        <script type="text/javascript" src="js/jquery.selectBox.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
-
     </head>
     <body>
         <!--
@@ -131,7 +126,7 @@
 
         </section>
 
-        <section class="navigation-container">
+        <section class="jquery-navigation-container">
             <h2>Slide Down Menu</h2>
 
             <h3>Pure CSS and jQuery</h3>
@@ -174,7 +169,53 @@
             </nav>
         </section>
 
+        <section class="js-navigation-container">
+            <h2>Slide Down Menu</h2>
 
+            <h3>Pure CSS and JavaScript</h3>
+
+            <nav class="navigation">
+                <ul class="main-list">
+                    <li><a href="#">Nav 1</a></li>
+                    <li><a href="#">Nav 2</a></li>
+                    <li class="list-container">
+                        <a href="#">Nav 3</a>
+                        <ul class="inner-list">
+                            <li><a href="#">Nav 3.1</a></li>
+                            <li><a href="#">Nav 3.2</a></li>
+                            <li><a href="#">Nav 3.3</a></li>
+                            <li class="list-container">
+                                <a href="#">Nav 3.4</a>
+                                <ul class="inner-list list-aside">
+                                    <li><a href="#">Nav 3.4.1</a></li>
+                                    <li class="list-container">
+                                        <a href="#">Nav 3.4.2</a>
+                                        <ul class="inner-list list-aside">
+                                            <li><a href="#">Nav 3.4.2.1</a></li>
+                                            <li><a href="#">Nav 3.4.2.2</a></li>
+                                            <li><a href="#">Nav 3.4.2.3</a></li>
+                                            <li><a href="#">Nav 3.4.2.4</a></li>
+                                            <li><a href="#">Nav 3.4.2.5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Nav 3.4.3</a></li>
+                                    <li><a href="#">Nav 3.4.4</a></li>
+                                    <li><a href="#">Nav 3.4.5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Nav 3.5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Nav 4</a></li>
+                    <li><a href="#">Nav 5</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.jcarousel.js"></script>
+        <script type="text/javascript" src="js/jquery.selectBox.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
 
     </body>
 </html>

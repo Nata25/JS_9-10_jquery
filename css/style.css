@@ -26,7 +26,8 @@ img {
 .carousel-container,
 .selectBox-container,
 .checkBox-container,
-.navigation-container {
+.jquery-navigation-container,
+.js-navigation-container {
     height: 600px;
     padding-top: 40px;
 }
@@ -331,8 +332,12 @@ img {
 
 /* Navigation */
 
-.navigation-container {
+.jquery-navigation-container {
     background-color: #a5faff;
+}
+
+.js-navigation-container {
+    background-color: #a5eeff;
 }
 
 .navigation ul {
@@ -421,6 +426,10 @@ img {
     left: 200px;
 }
 
+.animated {
+    animation: color-change 1s;
+}
+
 @keyframes color-change {
     from {
         background-color: #e8ab4b;
@@ -437,8 +446,4 @@ img {
     to {
         background-color: #ef6e46;
     }
-}
-
-.animated {
-    animation: color-change 1s;
 }

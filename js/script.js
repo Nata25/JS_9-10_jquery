@@ -105,18 +105,37 @@ $(function() {
     }
 
 //*********** Navigation *********** //
-    $(".inner-list").hide();
+    // jQuery part
 
-    $(".navigation a").click(function(event) {
-        event.preventDefault();
-    });
+    // $(".inner-list").hide();
+    //
+    // $(".navigation a").click(function(event) {
+    //     event.preventDefault();
+    // });
+    //
+    // $(".list-container").hover(
+    //     function() {
+    //         var submenu = $(this).children("ul");
+    //         submenu.slideToggle(250);
+    //         submenu.toggleClass("animated");
+    //     }
+    // );
 
-    $(".list-container").hover(
-        function() {
-            var submenu = $(this).children("ul");
-            submenu.slideToggle(250);
-            submenu.toggleClass("animated");
-        }
-    );
+    // JavaScript part
+    
+    // Hide all submenues (if user has no js, everithing would be visible by default)
+    var submenues = document.getElementsByClassName("inner-list");
+    var len = submenues.length;
+    for (var i = 0; i < len; i++) {
+        submenues[i].style.display = "none";
+    };
 
+    // Prevent page reload on menu items click
+    var links = document.querySelectorAll(".navigation a");
+    len = links.length;
+    for (var i = 0; i < len; i++) {
+        links[i].addEventListener("click", function(event) {
+            event.preventDefault();
+        });
+    }
 }); // end of ready
