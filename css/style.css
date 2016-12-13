@@ -362,7 +362,6 @@ img {
     color: #000;
 }
 
-
 .navigation a,
 .list-container {
     display: inline-block;
@@ -425,4 +424,8 @@ img {
 .list-aside {
     top: 0;
     left: 200px;
+}
+
+.list-container > ul {
+    display: none;
 }

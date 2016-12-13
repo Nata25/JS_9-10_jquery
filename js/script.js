@@ -107,6 +107,15 @@ $(function() {
 //*********** Navigation *********** //
     $(".navigation a").click(function(event) {
         event.preventDefault();
-    })
+    });
+
+    $(".list-container").hover(
+        function() {
+            $(this).children("ul").css("display", "block");
+        },
+        function() {
+            $(this).children("ul").css("display", "none");
+        }
+    );
 
 }); // end of ready
