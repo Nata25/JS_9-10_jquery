@@ -340,8 +340,12 @@ img {
     cursor: pointer;
 }
 
-.navigation ul {
+.navigation > ul,
+.list-container {
     display: flex;
+}
+
+.navigation ul {
     list-style-type: none;
     background-color: #ef6e46;
 }
@@ -426,6 +430,6 @@ img {
     left: 200px;
 }
 
-.list-container > ul {
+.hidden {
     display: none;
 }
