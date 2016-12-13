@@ -351,7 +351,7 @@ img {
 }
 
 .navigation > ul > li > a,
-.navigation > .list-container {
+.navigation > ul > .list-container {
     padding: 17px 40px;
 }
 
@@ -383,10 +383,6 @@ img {
 .navigation a:hover,
 .list-container:hover {
     color: #000;
-}
-
-.list-container a {
-    padding: 15px 40px;
 }
 
 .list-container::after {
