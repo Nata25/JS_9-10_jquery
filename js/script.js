@@ -117,4 +117,5 @@ $(function() {
             $(this).children("ul").toggleClass("animated");
         }
     );
+
 }); // end of ready
