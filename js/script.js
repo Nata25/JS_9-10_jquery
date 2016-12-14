@@ -135,7 +135,7 @@ $(function() {
     len = links.length;
     for (var i = 0; i < len; i++) {
         links[i].addEventListener("click", function(event) {
-            event.preventDefault();
+            // event.preventDefault();
         });
     }
 
@@ -151,12 +151,13 @@ $(function() {
             console.log("hover on #" + event.target.id);
 
             // find initial height of list
+            innerList.style.display = "block";
             // var actualHeight = calcHeight(innerList);
-            innerList.style.display = "flex";
             var actualHeight = 245;
 
             // Animate slideDown effect
-            animateSlideDown(innerList, actualHeight, 1000, 5);
+            animateSlideDown(innerList, actualHeight, 1000, 15);
+            event.stopPropagation();
         });
 
         listContainers[i].addEventListener("mouseleave", function() {
@@ -202,7 +203,7 @@ $(function() {
         var renderFrame = setInterval(function() {
             currentHeight += step;
             element.style.height = currentHeight + "px";
-            // console.log(innerList.style.height);
+            console.log(element.style.height);
         }, tick);
 
         setTimeout(function() {
@@ -213,5 +214,9 @@ $(function() {
         }, recalculatedDuration);
 
     }
+
+    // document.getElementById("2").addEventListener("mouseenter", function(event) {
+    //     console.log(event.target.style.height);
+    // });
 
 }); // end of ready

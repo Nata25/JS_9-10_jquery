@@ -355,11 +355,15 @@ img {
 
 .main-list,
 .list-container {
-    display: flex;
+    display: block;
 }
 
 .navigation > ul {  /* .main-list */
     background-color: #e67a38;
+}
+
+.main-list li {
+    display: inline-block;
 }
 
 .main-list > li > a {
@@ -412,10 +416,13 @@ img {
 .inner-list {
     display: none;
     position: absolute;
-    flex-direction: column;
     top: 53px;
     left: 0;
     width: 200px;
+}
+
+.inner-list li {
+    display: block;
 }
 
 .inner-list a {
