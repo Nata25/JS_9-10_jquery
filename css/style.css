@@ -455,3 +455,25 @@ img {
         background-color: #ef6e46;
     }
 }
+
+.opacity-animated {
+    animation: opacity-change .4s;
+}
+
+@keyframes opacity-change {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes opacity-change {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

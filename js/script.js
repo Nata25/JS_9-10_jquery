@@ -160,9 +160,15 @@ $(function() {
             event.stopPropagation();
         });
 
-        listContainers[i].addEventListener("mouseleave", function() {
+        listContainers[i].addEventListener("mouseleave", function(event) {
             var innerList = this.children[1];
-            innerList.style.display = "none";
+
+            innerList.classList.add("opacity-animated");
+            setTimeout(function() {
+                innerList.style.display = "none";
+            }, 300);
+            // innerList.style.display = "none";
+            // innerList.classList.remove("opacity-animated");
         });
     }
 
