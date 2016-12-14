@@ -166,75 +166,61 @@ $(function() {
             console.log("inside mouseenter height is ", height);
 
             // Animate slideDown effect
-            animateSlideDown(innerList, height, 500);
+            animateSlide(innerList, height, 500, "up");
 
         });
 
         listContainers[i].addEventListener("mouseleave", function(event) {
             var innerList = this.children[1];
 
-            innerList.style.opacity = "0";
-            setTimeout(function() {
-                innerList.style.display = "none";
-                innerList.style.opacity = "1";
-            }, 300);
+            // Opacity effect
+            // innerList.style.opacity = "0";
+            // setTimeout(function() {
+            //     innerList.style.display = "none";
+            //     innerList.style.opacity = "1";
+            // }, 300);
 
-        // animateSlideUp(innerList, height, 500);
+            // Slide Up effect
+            animateSlideUp(innerList, height, 500);
 
         });
     }
 
-    function animateSlideDown(element, height, duration) {
+    function animateSlide(element, height, duration, direction) {
         // @param {DOM element} element
         // @param {number} hight - element's height
         // @param {number} duration
+        // @param {string} direction : "up" is needed to identify slideUp animation; othewise, any value
 
-        element.style.display = "block"; // need to display element after mouseleave
+        element.style.display = "block"; // need to display element after mouseleave if opacity effect is used instead of slideUp
+
+        var up = (direction == "up") ? true : false;
+
+        if (up) element.style.height = 0;
+
         element.style.overflow = "hidden";
-        element.style.height = 0;
 
-        var tick = 50;
+        var tick = 30;
 
         var frames = Math.floor(duration / tick); // num of frames
         step = Math.floor(height / frames);
-        var currentHeight = height - frames * step;
+
+        var currentHeight = (up) ? (height - frames * step) : height;
+
         var renderFrame = setInterval(function() {
-            currentHeight += step;
+            currentHeight = (up) ? currentHeight + step : currentHeight - step;
             element.style.height = currentHeight + "px";
-            console.log(element.style.height);
         }, tick);
 
         setTimeout(function() {
             clearInterval(renderFrame);
-            element.style.overflow = "visible";
+            if (up) {
+                element.style.overflow = "visible"; // to show next submenu on hover
+            }
+            else {
+                element.style.height = 0; // get rid of the last fraction
+            }
         }, duration);
-    }
-
-
-    function animateSlideUp(element, height, duration, step) {
-
-        // prepare for animation
-        element.style.overflow = "hidden";
-
-        var frames = Math.floor(height / step); // num of frames
-        var tick = Math.floor(duration / frames);
-        var recalculatedDuration = tick * frames; // actual animation duration
-        console.log("frames: ", frames, "tick: ", tick, "duration: ", recalculatedDuration);
-        // var currentHeight = height % step;
-        currentHeight = height;
-        var renderFrame = setInterval(function() {
-            currentHeight -= step;
-            element.style.height = currentHeight + "px";
-            console.log(element.style.height);
-        }, tick);
-
-        setTimeout(function() {
-            // console.log("inside setTimeout");
-            clearInterval(renderFrame);
-            element.style.height = 0;
-            console.log(element.style.height);
-        }, recalculatedDuration);
-
     }
 
 }); // end of ready
