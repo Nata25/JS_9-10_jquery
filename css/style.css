@@ -427,7 +427,7 @@ img {
     left: 200px;
 }
 
-.animated {
+.color-animated {
     animation: color-change 1s;
 }
 

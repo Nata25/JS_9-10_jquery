@@ -108,18 +108,18 @@ $(function() {
     // jQuery part
 
     // $(".inner-list").hide();
-    //
-    // $(".navigation a").click(function(event) {
-    //     event.preventDefault();
-    // });
-    //
-    // $(".list-container").hover(
-    //     function() {
-    //         var submenu = $(this).children("ul");
-    //         submenu.slideToggle(250);
-    //         submenu.toggleClass("animated");
-    //     }
-    // );
+
+    $(".navigation a", ".jquery-navigation-container").click(function(event) {
+        event.preventDefault();
+    });
+
+    $(".jquery-navigation-container .list-container").hover(
+        function() {
+            var submenu = $(this).children("ul");
+            submenu.slideToggle(250);
+            submenu.toggleClass("color-animated");
+        }
+    );
 
     // JavaScript part
 
@@ -131,7 +131,7 @@ $(function() {
     // };
 
     // Prevent page reload on menu items click
-    var links = document.querySelectorAll(".navigation a");
+    var links = document.querySelectorAll(".js-navigation-container .navigation a");
     len = links.length;
     for (var i = 0; i < len; i++) {
         links[i].addEventListener("click", function(event) {
@@ -140,16 +140,23 @@ $(function() {
     }
 
     // Show submenues on parent hover
-    var listContainers = document.getElementsByClassName("list-container");
+    var listContainers = document.querySelectorAll(".js-navigation-container .list-container");
     len = listContainers.length;
+    console.log("len", len);
 
     // attach hover listeners to every list container
     for (var i = 0; i < len; i++) {
-        listContainers[i].addEventListener("mouseenter", function() {
+        listContainers[i].addEventListener("mouseenter", function(event) {
             var innerList = this.children[1];
+            console.log("hover on #" + event.target.id);
 
-            // animate slideDown effect
-            animateSlideDown(innerList, 1000, 3);
+            // find initial height of list
+            // var actualHeight = calcHeight(innerList);
+            innerList.style.display = "flex";
+            var actualHeight = 245;
+
+            // Animate slideDown effect
+            animateSlideDown(innerList, actualHeight, 1000, 5);
         });
 
         listContainers[i].addEventListener("mouseleave", function() {
@@ -162,7 +169,6 @@ $(function() {
         // get height of submenu list
         var initialTop = elem.style.top;
         elem.style.top = "-10000px";
-        elem.style.display = "flex";
         var height;
         if (elem.offsetHeight) {
          height = elem.offsetHeight;
@@ -170,27 +176,29 @@ $(function() {
         else if (elem.style.pixelHeight) {
          height = elem.style.pixelHeight;
         }
-        console.log(height);
+        // height = elem.getBoundingClientRect().height;
         elem.style.top = initialTop;
+        console.log("height of #" + elem.id + " = " + height);
+
         return height;
     }
 
-    function animateSlideDown(element, duration, step) {
-        // find initial height of list
-        var actualHeight = calcHeight(element);
+    function animateSlideDown(element, height, duration, step) {
+
 
         // prepare for animation
         element.style.overflow = "hidden";
         element.style.height = 0;
 
-        // Animate slideDown effect
-        var duration = 1000; // wanted animation duration
-        var step = 3; // num of pixels per frame
-        var frames = Math.floor(actualHeight / step); // num of frames
+        console.log("animating #" + element.id);
+        console.log("top:", window.getComputedStyle(element).top, "left:", window.getComputedStyle(element).left);
+        //var duration = 1000; // wanted animation duration
+        //var step = 3; // num of pixels per frame
+        var frames = Math.floor(height / step); // num of frames
         var tick = Math.floor(duration / frames);
         var recalculatedDuration = tick * frames; // actual animation duration
         console.log("frames: ", frames, "tick: ", tick, "duration: ", recalculatedDuration);
-        var currentHeight = actualHeight % step;
+        var currentHeight = height % step;
         var renderFrame = setInterval(function() {
             currentHeight += step;
             element.style.height = currentHeight + "px";
@@ -198,10 +206,12 @@ $(function() {
         }, tick);
 
         setTimeout(function() {
-            console.log("inside setTimeout");
+            // console.log("inside setTimeout");
             clearInterval(renderFrame);
             console.log(element.style.height);
+            element.style.overflow = "visible";
         }, recalculatedDuration);
+
     }
 
 }); // end of ready
