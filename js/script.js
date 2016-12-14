@@ -149,10 +149,10 @@ $(function() {
     for (var i = 0; i < len; i++) {
         listContainers[i].addEventListener("mouseenter", function(event) {
             var innerList = this.children[1];
-            console.log("hover on #" + event.target.id);
 
             // find initial height of list
             innerList.style.display = "block";
+            // var actualHeight = calcHeight(innerList);
             var actualHeight = 245;
 
             // Animate slideDown effect
@@ -172,38 +172,33 @@ $(function() {
     }
 
     function calcHeight(elem) {
-        // get height of submenu list
         var initialTop = elem.style.top;
         elem.style.top = "-10000px";
         var height;
         if (elem.offsetHeight) {
-         height = elem.offsetHeight;
+            height = elem.offsetHeight;
         }
         else if (elem.style.pixelHeight) {
-         height = elem.style.pixelHeight;
+            height = elem.style.pixelHeight;
         }
 
         elem.style.top = initialTop;
-        console.log("height of #" + elem.id + " = " + height);
 
         return height;
     }
 
     function animateSlideDown(element, height, duration, step) {
+        // @param {DOM element} element
+        // @param {number} hight - element height
+        // @param {number} duration - wanted max timing
+        // @param {number} step - px per frame
 
-
-        // prepare for animation
         element.style.overflow = "hidden";
         element.style.height = 0;
 
-        console.log("animating #" + element.id);
-        console.log("top:", window.getComputedStyle(element).top, "left:", window.getComputedStyle(element).left);
-        //var duration = 1000; // wanted animation duration
-        //var step = 3; // num of pixels per frame
         var frames = Math.floor(height / step); // num of frames
         var tick = Math.floor(duration / frames);
         var recalculatedDuration = tick * frames; // actual animation duration
-        console.log("frames: ", frames, "tick: ", tick, "duration: ", recalculatedDuration);
         var currentHeight = height % step;
         var renderFrame = setInterval(function() {
             currentHeight += step;
@@ -212,16 +207,9 @@ $(function() {
         }, tick);
 
         setTimeout(function() {
-            // console.log("inside setTimeout");
             clearInterval(renderFrame);
-            console.log(element.style.height);
             element.style.overflow = "visible";
         }, recalculatedDuration);
-
     }
-
-    // document.getElementById("2").addEventListener("mouseenter", function(event) {
-    //     console.log(event.target.style.height);
-    // });
 
 }); // end of ready
