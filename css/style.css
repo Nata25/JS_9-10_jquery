@@ -419,6 +419,7 @@ img {
     top: 53px;
     left: 0;
     width: 200px;
+    transition: opacity .3s ease-in-out;
 }
 
 .inner-list li {

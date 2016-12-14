@@ -105,6 +105,7 @@ $(function() {
     }
 
 //*********** Navigation *********** //
+
     // jQuery part
 
     // $(".inner-list").hide();
@@ -135,7 +136,7 @@ $(function() {
     len = links.length;
     for (var i = 0; i < len; i++) {
         links[i].addEventListener("click", function(event) {
-            // event.preventDefault();
+            event.preventDefault();
         });
     }
 
@@ -152,23 +153,21 @@ $(function() {
 
             // find initial height of list
             innerList.style.display = "block";
-            // var actualHeight = calcHeight(innerList);
             var actualHeight = 245;
 
             // Animate slideDown effect
-            animateSlideDown(innerList, actualHeight, 1000, 15);
-            event.stopPropagation();
+            animateSlideDown(innerList, actualHeight, 700, 3);
+
         });
 
         listContainers[i].addEventListener("mouseleave", function(event) {
             var innerList = this.children[1];
 
-            innerList.classList.add("opacity-animated");
+            innerList.style.opacity = "0";
             setTimeout(function() {
                 innerList.style.display = "none";
+                innerList.style.opacity = "1";
             }, 300);
-            // innerList.style.display = "none";
-            // innerList.classList.remove("opacity-animated");
         });
     }
 
@@ -183,7 +182,7 @@ $(function() {
         else if (elem.style.pixelHeight) {
          height = elem.style.pixelHeight;
         }
-        // height = elem.getBoundingClientRect().height;
+
         elem.style.top = initialTop;
         console.log("height of #" + elem.id + " = " + height);
 
