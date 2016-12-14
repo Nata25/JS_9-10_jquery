@@ -142,54 +142,66 @@ $(function() {
     // Show submenues on parent hover
     var listContainers = document.getElementsByClassName("list-container");
     len = listContainers.length;
+
+    // attach hover listeners to every list container
     for (var i = 0; i < len; i++) {
         listContainers[i].addEventListener("mouseenter", function() {
             var innerList = this.children[1];
-            innerList.style.overflow = "hidden";
-
-            // get height of submenu list
-            var initialHeight = innerList.style.top;
-            innerList.style.top = "-10000px";
-            innerList.style.display = "flex";
-            var actualHeight;
-            if (innerList.offsetHeight) {
-                actualHeight = innerList.offsetHeight;
-            }
-            else if (innerList.style.pixelHeight) {
-                actualHeight = innerList.style.pixelHeight;
-            }
-            console.log(actualHeight);
-            innerList.style.top = initialHeight;
-            innerList.style.height = 0;
 
             // animate slideDown effect
-
-            var duration = 1000; // wanted animation duration
-            var step = 3; // num of pixels per frame
-            var frames = Math.floor(actualHeight / step); // num of frames
-            var tick = Math.floor(duration / frames);
-            var recalculatedDuration = tick * frames; // actual animation duration
-            console.log("frames: ", frames, "tick: ", tick, "duration: ", recalculatedDuration);
-            var currentHeight = actualHeight % step;
-            var renderFrame = setInterval(function() {
-                currentHeight += step;
-                innerList.style.height = currentHeight + "px";
-                // console.log(innerList.style.height);
-            }, tick);
-            // var height = window.getComputedStyle(innerList).height;
-            // console.log("heigt is ", height);
-            // innerList.style.display = "flex";
-            setTimeout(function() {
-                console.log("inside setTimeout");
-                clearInterval(renderFrame);
-                console.log(innerList.style.height);
-            }, recalculatedDuration);
+            animateSlideDown(innerList, 1000, 3);
         });
 
         listContainers[i].addEventListener("mouseleave", function() {
             var innerList = this.children[1];
             innerList.style.display = "none";
         });
+    }
+
+    function calcHeight(elem) {
+        // get height of submenu list
+        var initialTop = elem.style.top;
+        elem.style.top = "-10000px";
+        elem.style.display = "flex";
+        var height;
+        if (elem.offsetHeight) {
+         height = elem.offsetHeight;
+        }
+        else if (elem.style.pixelHeight) {
+         height = elem.style.pixelHeight;
+        }
+        console.log(height);
+        elem.style.top = initialTop;
+        return height;
+    }
+
+    function animateSlideDown(element, duration, step) {
+        // find initial height of list
+        var actualHeight = calcHeight(element);
+
+        // prepare for animation
+        element.style.overflow = "hidden";
+        element.style.height = 0;
+
+        // Animate slideDown effect
+        var duration = 1000; // wanted animation duration
+        var step = 3; // num of pixels per frame
+        var frames = Math.floor(actualHeight / step); // num of frames
+        var tick = Math.floor(duration / frames);
+        var recalculatedDuration = tick * frames; // actual animation duration
+        console.log("frames: ", frames, "tick: ", tick, "duration: ", recalculatedDuration);
+        var currentHeight = actualHeight % step;
+        var renderFrame = setInterval(function() {
+            currentHeight += step;
+            element.style.height = currentHeight + "px";
+            // console.log(innerList.style.height);
+        }, tick);
+
+        setTimeout(function() {
+            console.log("inside setTimeout");
+            clearInterval(renderFrame);
+            console.log(element.style.height);
+        }, recalculatedDuration);
     }
 
 }); // end of ready
