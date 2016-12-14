@@ -145,12 +145,7 @@ $(function() {
     len = listContainers.length;
     console.log("len", len);
 
-    // calculate natural height of nested lists
-    for (var i = 0; i < len; i++) {
 
-    }
-
-    // attach hover listeners to every list container
     for (var i = 0; i < len; i++) {
         var elem = listContainers[i].children[1]; // get inner list
         // get its height
@@ -165,21 +160,13 @@ $(function() {
             height = elem.style.pixelHeight;
         }
 
-        // var actualHeight = calcHeight(list);
-        console.log(height);
-
-
         listContainers[i].addEventListener("mouseenter", function(event) {
             var innerList = this.children[1];
             innerList.style.top = initialTop;
-            // find initial height of list
-            // innerList.style.display = "block";
-            // var actualHeight = calcHeight(innerList);
-            // var actualHeight = 245;
             console.log("inside mouseenter height is ", height);
 
             // Animate slideDown effect
-            animateSlideDown(innerList, height, 700, 3);
+            animateSlideDown(innerList, height, 500, 4);
 
         });
 
