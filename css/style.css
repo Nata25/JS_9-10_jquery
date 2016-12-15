@@ -35,8 +35,8 @@ img {
 /* Carousel */
 
 .carousel-container {
-    background-color: #dbe3f1;
     transition: background-color .2s;
+    background-color: #dbe3f1;
 }
 
 .jcarousel-wrapper {
@@ -50,14 +50,14 @@ img {
     width: 640px;
     height: 425px;
     margin: 0 auto;
-    overflow: hidden;
     border: 5px solid #fff;
     box-shadow: 0 0 5px 0 #bbb;
+    overflow: hidden;
 }
 
 .jcarousel div {
-    width: 20000em;
     position: relative;
+    width: 20000em;
     list-style-type: none;
 }
 
@@ -67,16 +67,16 @@ img {
 
 .jcarousel-control-prev,
 .jcarousel-control-next {
-    position: absolute;
     display: inline-block;
+    position: absolute;
     top: 200px;
     width: 20px;
     height: 20px;
     padding: 5px;
     transition: opacity .3s;
-    color: #464658;
     border: 1px solid #464658;
     border-radius: 4px;
+    color: #464658;
     font-size: 40px;
     line-height: 15px;
     text-align: center;
@@ -106,10 +106,10 @@ img {
     width: 15px;
     height: 15px;
     margin: 20px 5px;
+    transition: background-color .3s;
     border-radius: 50%;
     background-color: #fff;
     box-shadow: 0 0 5px 0 #999;
-    transition: background-color .3s;
 }
 
 .jcarousel-pagination a.active {
@@ -118,10 +118,14 @@ img {
 
 /* SelectBox */
 
+#my-dropdown {
+    display: none;
+}
+
 .selectBox-container {
+    transition: background-color .3s;
     font-family: Arial, sans-serif;
     text-transform: capitalize;
-    transition: background-color .3s;
 }
 
 .default,
@@ -145,8 +149,8 @@ img {
 }
 
 .selectBox-dropdown-menu li:last-child a::after {
-    background-color: #fff;
     border: 1px solid #bbb;
+    background-color: #fff;
 }
 
 .selectBox-dropdown {
@@ -156,23 +160,19 @@ img {
     padding: 5px;
     border: 1px solid #999;
     border-radius: 4px;
+    outline: none;
     color: #000;
     font-family: Arial, sans-serif;
     line-height: 17px;
     text-align: left;
     text-decoration: none;
     text-transform: capitalize;
-    outline: none;
     cursor: default;
 }
 
 .selectBox {
     display: block;
     margin: 150px auto;
-}
-
-.selectBox-dropdown-menu {
-    background-color: #eee;
 }
 
 .selectBox-dropdown .selectBox-label {
@@ -190,7 +190,6 @@ img {
     right: 20px;
     width: 15px;
     height: 15px;
-    background-color: blue;
     content: '';
 }
 
@@ -200,34 +199,35 @@ img {
     right: 0;
     width: 23px;
     height: 100%;
-    background: url('../img/jquery.selectBox-arrow.gif') 50% center no-repeat;
     border-left: solid 1px #bbb;
+    background: url('../img/jquery.selectBox-arrow.gif') 50% center no-repeat;
 }
 
 .selectBox-dropdown-menu {
     position: absolute;
-    max-height: 200px;
     min-height: 1em;
+    max-height: 200px;
     border: 1px solid #999; /* should be the same border width as .selectBox-dropdown */
-    -webkit-overflow-scrolling: touch;
+    background-color: #eee;
     overflow: auto;
     z-index: 1;
+    -webkit-overflow-scrolling: touch;
 }
 
 .selectBox-options,
 .selectBox-options li,
 .selectBox-options li a {
+    display: block;
     margin: 0;
     padding: 0;
-    list-style: none;
-    display: block;
-    cursor: default;
     font-family: Arial, sans-serif;
+    list-style: none;
     text-transform: capitalize;
+    cursor: default;
 }
 
 .selectBox-options.selectBox-options-top {
-	margin-top: 1px;
+    margin-top: 1px;
     border-radius: 5px;
 }
 
@@ -236,8 +236,8 @@ img {
 }
 
 .selectBox-options li a {
-    line-height: 1.5;
     padding: 0 .5em;
+    line-height: 1.5;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -255,8 +255,8 @@ img {
 
 .wrapper {
     position: relative;
-    margin: 0 auto;
     width: 350px;
+    margin: 0 auto;
     text-transform: none;
     box-sizing: border-box;
 }
@@ -267,7 +267,7 @@ img {
     margin: 10px auto;
     padding: 20px 57px 20px 20px;
     border: 1px solid #ada8a8;
-    background-color: #99ccff;
+    background-color: #9cf;
     font-size: 16px;
     text-align: left;
 }
@@ -281,8 +281,8 @@ img {
     height: 13px;
     border: 1px solid #848181;
     border-radius: 3px;
-    box-shadow: 0 0 0 1px #fff;
     background-color: #fff;
+    box-shadow: 0 0 0 1px #fff;
 }
 
 .css-checkbox::after {
@@ -296,15 +296,15 @@ img {
 }
 
 .css-native-checkbox:checked + .css-checkbox::after {
-    content: '\2228';
     font-size: 10px;
     text-align: center;
+    content: '\2228';
 }
 
 .css-native-checkbox:disabled + .css-checkbox::after,
 .input-disabled {
-    color: rgba(83, 83, 83, .5);
     border: 1px solid rgba(83, 83, 83, .3);
+    color: rgba(83, 83, 83, .5);
 }
 
 .label-disabled {
@@ -341,8 +341,8 @@ img {
 }
 
 .navigation ul {
-    list-style-type: none;
     background-color: #ef6e46;
+    list-style-type: none;
 }
 
 .navigation li {
@@ -372,20 +372,16 @@ img {
 
 .navigation a {
     display: inline-block;
-    width: 100%;
     position: relative;
+    width: 100%;
     padding: 15px 40px;
+    transition: background-color .1s ease-in-out;
     background-color: transparent;
     color: #fff;
-    transition: background-color .1s ease-in-out;
-    box-sizing: border-box;
     font-family: Georgia, Arial, sans-serif;
     text-decoration: none;
     cursor: pointer;
-}
-
-.inner-list a {
-    color: #d9f8ff;
+    box-sizing: border-box;
 }
 
 .navigation a:hover {
@@ -400,21 +396,21 @@ img {
     width: 0;
     height: 0;
     border-top: 5px solid #fff;
-    border-left: 5px solid transparent;
     border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
     content: '';
     cursor: pointer;
 }
 
 .list-container .list-container > a::after {
     position: absolute;
+    top: 19px;
+    left: 180px;
     width: 0;
     height: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 5px solid #d9f8ff;
-    left: 180px;
-    top: 19px;
 }
 
 .inner-list {
@@ -426,12 +422,13 @@ img {
     transition: opacity .3s ease-in-out;
 }
 
-.inner-list li {
-    display: block;
-}
-
 .inner-list a {
     border-left: 1px solid #a5faff;
+    color: #d9f8ff;
+}
+
+.inner-list li {
+    display: block;
 }
 
 .list-aside {
@@ -458,27 +455,5 @@ img {
     }
     to {
         background-color: #ef6e46;
-    }
-}
-
-.opacity-animated {
-    animation: opacity-change .4s;
-}
-
-@keyframes opacity-change {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-@-webkit-keyframes opacity-change {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
     }
 }

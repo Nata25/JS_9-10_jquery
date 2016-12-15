@@ -167,7 +167,6 @@ $(function() {
 
             // Animate slideDown effect
             animateSlide(innerList, height, 500, true);
-
         });
 
         listContainers[i].addEventListener("mouseleave", function(event) {
@@ -200,7 +199,6 @@ $(function() {
         element.style.overflow = "hidden";
 
         var tick = 30;
-
         var frames = Math.floor(duration / tick); // num of frames
         step = Math.floor(height / frames);
 
@@ -208,13 +206,11 @@ $(function() {
 
         var renderFrame = setInterval(function() {
 
-            if (isDown) {
-                currentHeight += step;
-            }
-            else {
-                currentHeight -= step;
-            }
-            element.style.height = currentHeight + "px";
+        currentHeight = (isDown) ? currentHeight += step :
+                                   currentHeight -= step;
+
+        element.style.height = currentHeight + "px";
+
         }, tick);
 
         setTimeout(function() {
@@ -222,18 +218,13 @@ $(function() {
             if (isDown) {
                 // enable showing next submenu on hover but only if slideDown is finished
                 element.style.overflow = "visible";
-                // slideDownAnimationEnded = true;
             }
             else {
-                element.style.height = 0; // get rid of the last fraction
-                // else element.style.display = "none";
-
-                    element.style.opacity = "0";
-                    setTimeout(function() {
-                        element.style.display = "none";
-                        element.style.opacity = "1";
-                    }, 300);
-                }
+                // get rid of the last height fraction
+                element.style.height = 0;
+                // if mouseleave fired before mouseenter ended, manually hide visible <a>
+                element.style.display = "none";
+            }
         }, duration);
 
     }
