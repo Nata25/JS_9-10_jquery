@@ -166,7 +166,7 @@ $(function() {
             console.log("inside mouseenter height is ", height);
 
             // Animate slideDown effect
-            animateSlide(innerList, height, 500, "down");
+            animateSlide(innerList, height, 500, true);
 
         });
 
@@ -187,46 +187,61 @@ $(function() {
         });
     }
 
-    function animateSlide(element, height, duration, direction) {
+    function animateSlide(element, height, duration, isDown) {
         // @param {DOM element} element
         // @param {number} hight - element's height
         // @param {number} duration
-        // @param {string} direction : "down" is needed to identify slideDown animation; othewise, any value
+        // @param {boolean} isDown : true for slideDown animation
 
         element.style.display = "block"; // need to display element after mouseleave if opacity effect is used instead of slideUp
+        var slideDownAnimationEnded = !isDown;
+        // var slideUpAnimationEnded = !isDown;
 
-        var down = (direction == "down") ? true : false;
-
-        if (down) element.style.height = 0;
+        if (isDown) {
+            element.style.height = 0;
+        }
 
         element.style.overflow = "hidden";
 
         var tick = 30;
-        var animationEnded = false;
 
         var frames = Math.floor(duration / tick); // num of frames
         step = Math.floor(height / frames);
 
-        var currentHeight = (down) ? (height - frames * step) : height;
+        var currentHeight = (isDown) ? (height - frames * step) : height;
 
         var renderFrame = setInterval(function() {
-            currentHeight = (down) ? currentHeight + step : currentHeight - step;
+
+            if (isDown) {
+                currentHeight += step;
+            }
+            else if (slideDownAnimationEnded) {
+                currentHeight -= step;
+            }
             element.style.height = currentHeight + "px";
         }, tick);
 
         setTimeout(function() {
             clearInterval(renderFrame);
-            if (down) {
+            if (isDown) {
                 // enable showing next submenu on hover but only if slideDown is finished
                 element.style.overflow = "visible";
-                animationEnded = true;
+                slideDownAnimationEnded = true;
             }
             else {
-                if (animationEnded) element.style.height = 0; // get rid of the last fraction
-                else element.style.display = "none";
+                if (slideDownAnimationEnded) element.style.height = 0; // get rid of the last fraction
+                // else element.style.display = "none";
+                else {
+                    element.style.opacity = "0";
+                    setTimeout(function() {
+                        element.style.display = "none";
+                        element.style.opacity = "1";
+                    }, 300);
+                }
             }
+            console.log("animation", slideDownAnimationEnded)
         }, duration);
-        console.log(element.style.height);
+        console.log("animation", slideDownAnimationEnded);
     }
 
 }); // end of ready
