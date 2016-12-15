@@ -194,12 +194,8 @@ $(function() {
         // @param {boolean} isDown : true for slideDown animation
 
         element.style.display = "block"; // need to display element after mouseleave if opacity effect is used instead of slideUp
-        var slideDownAnimationEnded = !isDown;
-        // var slideUpAnimationEnded = !isDown;
 
-        if (isDown) {
-            element.style.height = 0;
-        }
+        if (isDown) { element.style.height = 0; }
 
         element.style.overflow = "hidden";
 
@@ -215,7 +211,7 @@ $(function() {
             if (isDown) {
                 currentHeight += step;
             }
-            else if (slideDownAnimationEnded) {
+            else {
                 currentHeight -= step;
             }
             element.style.height = currentHeight + "px";
@@ -226,22 +222,20 @@ $(function() {
             if (isDown) {
                 // enable showing next submenu on hover but only if slideDown is finished
                 element.style.overflow = "visible";
-                slideDownAnimationEnded = true;
+                // slideDownAnimationEnded = true;
             }
             else {
-                if (slideDownAnimationEnded) element.style.height = 0; // get rid of the last fraction
+                element.style.height = 0; // get rid of the last fraction
                 // else element.style.display = "none";
-                else {
+
                     element.style.opacity = "0";
                     setTimeout(function() {
                         element.style.display = "none";
                         element.style.opacity = "1";
                     }, 300);
                 }
-            }
-            console.log("animation", slideDownAnimationEnded)
         }, duration);
-        console.log("animation", slideDownAnimationEnded);
+
     }
 
 }); // end of ready
